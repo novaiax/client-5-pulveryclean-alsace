@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PulveryClean">
+  <rect width="64" height="64" fill="#d81e26"/>
+  <path d="M10 44 C26 33 42 33 56 41" fill="none" stroke="#c2a05b" stroke-width="5" stroke-linecap="round"/>
+  <text x="32" y="40" font-family="Oswald, Arial, sans-serif" font-size="36" font-weight="700" fill="#ffffff" text-anchor="middle">P</text>
+</svg>

@@ -1,0 +1,53 @@
+# =====================================================
+# PulveryClean Alsace - Configuration serveur Apache
+# Objectif : URLs propres (sans .html), domaine canonique unique,
+# compression et cache. Sur un hebergeur qui gere deja les URLs
+# propres (Netlify, Cloudflare Pages), ce fichier est simplement ignore.
+# =====================================================
+
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Forcer le HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Forcer la version sans www (domaine canonique)
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # Rediriger /index ou /index.html vers la racine
+  RewriteCond %{THE_REQUEST} \s/+index(\.html)?[\s?] [NC]
+  RewriteRule ^ / [R=301,L]
+
+  # Rediriger toute demande en .html vers l'URL propre
+  RewriteCond %{THE_REQUEST} \s/+([^?\s]+)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # Servir le fichier .html correspondant a l'URL propre
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
+
+# Page d'erreur 404 (renvoie vers l'accueil si non geree autrement)
+ErrorDocument 404 /index.html
+
+# Compression GZIP
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml application/xml
+</IfModule>
+
+# Mise en cache des ressources statiques
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/webp "access plus 6 months"
+  ExpiresByType image/jpeg "access plus 6 months"
+  ExpiresByType image/svg+xml "access plus 6 months"
+  ExpiresByType text/html "access plus 1 day"
+</IfModule>
