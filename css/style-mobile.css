@@ -316,20 +316,21 @@ strong { font-weight: 600; }
 .hero-overlay {
   position: absolute; inset: 0; z-index: 1;
   background:
-    linear-gradient(to top, rgba(12, 10, 7, 0.94) 1%, rgba(12, 10, 7, 0.62) 36%, rgba(12, 10, 7, 0.16) 70%, rgba(12, 10, 7, 0.34) 100%),
-    radial-gradient(120% 80% at 15% 100%, rgba(12, 10, 7, 0.5), transparent 60%);
+    linear-gradient(to top, rgba(12, 10, 7, 0.95) 0%, rgba(12, 10, 7, 0.88) 24%, rgba(12, 10, 7, 0.66) 48%, rgba(12, 10, 7, 0.36) 72%, rgba(12, 10, 7, 0.26) 100%),
+    radial-gradient(135% 95% at 8% 100%, rgba(12, 10, 7, 0.6), transparent 62%);
 }
 .hero-content { position: relative; z-index: 2; padding-top: 92px; padding-bottom: 52px; max-width: 760px; }
-.hero-eyebrow { color: var(--gold-2); }
-.hero-eyebrow::before { background: var(--gold-2); }
+.hero-eyebrow { color: #e7c98a; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 2px 16px rgba(0, 0, 0, 0.55); }
+.hero-eyebrow::before { background: #e7c98a; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
 .hero-title {
   font-size: clamp(2.4rem, 9.5vw, 3.1rem);
   font-weight: 450; color: #fff; margin-bottom: 22px;
   letter-spacing: -0.02em; line-height: 1.04;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3);
 }
 .hero-title .line { display: block; }
 .hero-title em { font-style: italic; font-weight: 400; color: var(--gold-2); }
-.hero-lead { color: rgba(255, 255, 255, 0.84); max-width: 52ch; font-size: 1.08rem; line-height: 1.68; }
+.hero-lead { color: rgba(255, 255, 255, 0.86); max-width: 52ch; font-size: 1.08rem; line-height: 1.68; text-shadow: 0 1px 16px rgba(0, 0, 0, 0.45); }
 
 .hero-cta { display: flex; flex-direction: column; gap: 12px; margin: 28px 0 26px; }
 .hero-assur { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 30px; font-size: 0.84rem; color: rgba(255, 255, 255, 0.7); }
