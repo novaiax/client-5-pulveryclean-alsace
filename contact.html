@@ -3,13 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.classList.add('js');</script>
+<script>
+document.documentElement.classList.add('js');
+/* Filet de sécurité : si script.js ne se charge pas, on révèle quand même
+   tout le contenu après le chargement pour éviter des sections vides. */
+window.addEventListener('load', function () {
+  setTimeout(function () {
+    if (!window.__pcReady) {
+      var els = document.querySelectorAll('.reveal');
+      for (var i = 0; i < els.length; i++) { els[i].classList.add('is-visible'); }
+    }
+  }, 1800);
+});
+</script>
 
 <title>Contact et devis gratuit à Sélestat | PulveryClean Alsace</title>
-<meta name="description" content="Contactez PulveryClean Alsace pour un devis gratuit. Nettoyage de façade, toiture et terrasse en Alsace. Tél 06 45 78 64 72. 8 Rte de Colmar, 67600 Sélestat.">
+<meta name="description" content="Contactez PulveryClean Alsace pour un devis gratuit. Nettoyage de façade, toiture et terrasse en Alsace. Tél 06 45 78 64 72. 14 Rue de l'Étang, 67600 Bindernheim.">
 <link rel="canonical" href="https://pulveryclean-alsace.fr/contact">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#16130d">
 <link rel="alternate" hreflang="fr" href="https://pulveryclean-alsace.fr/contact">
 
 <meta property="og:type" content="website">
@@ -27,7 +39,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style-mobile.css">
 <link rel="stylesheet" href="css/style-desktop.css" media="(min-width: 1024px)">
@@ -45,8 +57,8 @@
     "email": "thomas.jehl@pulveryclean.fr",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "8 Route de Colmar",
-      "addressLocality": "Sélestat",
+      "streetAddress": "14 Rue de l'Étang",
+      "addressLocality": "Bindernheim",
       "postalCode": "67600",
       "addressRegion": "Grand Est",
       "addressCountry": "FR"
@@ -163,15 +175,14 @@
         </div>
 
         <ul class="contact-coords">
-          <li><span class="coord-label">Adresse</span>8 Rte de Colmar, 67600 Sélestat</li>
+          <li><span class="coord-label">Adresse</span>14 Rue de l'Étang, 67600 Bindernheim</li>
           <li><span class="coord-label">Zone</span>Alsace, Bas-Rhin et Haut-Rhin</li>
         </ul>
 
         <div class="hours-block">
           <h3>Horaires</h3>
           <ul class="hours-list">
-            <li><span>Lundi</span><span>Fermé</span></li>
-            <li><span>Mardi au samedi</span><span>Dès 08h30</span></li>
+            <li><span>Lundi au samedi</span><span>7h - 18h</span></li>
             <li><span>Dimanche</span><span>Fermé</span></li>
           </ul>
           <p class="hours-note">Interventions et devis sur rendez-vous.</p>
@@ -184,8 +195,8 @@
       <div class="map-wrap reveal">
         <iframe
           class="map-frame map-frame-lg"
-          title="Localisation de PulveryClean Alsace, 8 Route de Colmar, 67600 Sélestat"
-          src="https://www.google.com/maps?q=8+Route+de+Colmar+67600+S%C3%A9lestat&output=embed"
+          title="Localisation de PulveryClean Alsace, 14 Rue de l'Étang, 67600 Bindernheim"
+          src="https://www.google.com/maps?q=14+Rue+de+l%27%C3%89tang+67600+Bindernheim&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
@@ -233,12 +244,12 @@
     <div class="footer-col footer-contact">
       <h2 class="footer-title">Coordonnées</h2>
       <address>
-        8 Rte de Colmar<br>
-        67600 Sélestat<br>
+        14 Rue de l'Étang<br>
+        67600 Bindernheim<br>
         <a href="tel:+33645786472">06 45 78 64 72</a><br>
         <a href="mailto:thomas.jehl@pulveryclean.fr">thomas.jehl@pulveryclean.fr</a>
       </address>
-      <p class="footer-hours">Mardi au samedi, dès 08h30</p>
+      <p class="footer-hours">Lundi au samedi, 7h - 18h</p>
     </div>
   </div>
   <div class="footer-bottom">

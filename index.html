@@ -3,25 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.classList.add('js');</script>
+<script>
+document.documentElement.classList.add('js');
+/* Filet de sécurité : si script.js ne se charge pas, on révèle quand même
+   tout le contenu après le chargement pour éviter des sections vides. */
+window.addEventListener('load', function () {
+  setTimeout(function () {
+    if (!window.__pcReady) {
+      var els = document.querySelectorAll('.reveal');
+      for (var i = 0; i < els.length; i++) { els[i].classList.add('is-visible'); }
+    }
+  }, 1800);
+});
+</script>
 
-<title>Nettoyage de façade et toiture à Sélestat | PulveryClean Alsace</title>
-<meta name="description" content="PulveryClean Alsace nettoie façades, toitures, terrasses et panneaux solaires en Alsace. Sans chlore ni javel, résultat durable. Note 5/5 Google. Devis gratuit au 06 45 78 64 72.">
+<title>Nettoyage de toiture et façade en Alsace | PulveryClean Alsace</title>
+<meta name="description" content="PulveryClean Alsace redonne éclat et longévité à vos toitures, façades, terrasses et panneaux solaires. Sans chlore ni javel, résultat durable, note 5/5 Google. Devis gratuit sous 48 h au 06 45 78 64 72.">
 <link rel="canonical" href="https://pulveryclean-alsace.fr/">
 <meta name="robots" content="index, follow">
 <meta name="author" content="PulveryClean Alsace">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#16130d">
 <link rel="alternate" hreflang="fr" href="https://pulveryclean-alsace.fr/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="PulveryClean Alsace">
-<meta property="og:title" content="Nettoyage de façade et toiture à Sélestat | PulveryClean Alsace">
+<meta property="og:title" content="Nettoyage de toiture et façade en Alsace | PulveryClean Alsace">
 <meta property="og:description" content="Nettoyage durable de toitures, façades, terrasses et panneaux solaires en Alsace. Sans chlore ni javel. Devis gratuit.">
 <meta property="og:url" content="https://pulveryclean-alsace.fr/">
 <meta property="og:image" content="https://pulveryclean-alsace.fr/images/9.webp">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nettoyage de façade et toiture à Sélestat | PulveryClean Alsace">
+<meta name="twitter:title" content="Nettoyage de toiture et façade en Alsace | PulveryClean Alsace">
 <meta name="twitter:description" content="Nettoyage durable de toitures, façades, terrasses et panneaux solaires en Alsace. Sans chlore ni javel.">
 <meta name="twitter:image" content="https://pulveryclean-alsace.fr/images/9.webp">
 
@@ -31,8 +43,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<link rel="preload" as="image" href="images/9.webp" fetchpriority="high">
 <link rel="stylesheet" href="css/style-mobile.css">
 <link rel="stylesheet" href="css/style-desktop.css" media="(min-width: 1024px)">
 
@@ -51,18 +64,15 @@
   "description": "Nettoyage et traitement durable de toitures, façades, terrasses et panneaux solaires en Alsace, sans chlore ni javel.",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "8 Route de Colmar",
-    "addressLocality": "Sélestat",
+    "streetAddress": "14 Rue de l'Étang",
+    "addressLocality": "Bindernheim",
     "postalCode": "67600",
     "addressRegion": "Grand Est",
     "addressCountry": "FR"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 48.2594,
-    "longitude": 7.4538
-  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 48.2089, "longitude": 7.5472 },
   "areaServed": [
+    { "@type": "City", "name": "Strasbourg" },
     { "@type": "City", "name": "Sélestat" },
     { "@type": "City", "name": "Colmar" },
     { "@type": "City", "name": "Bindernheim" },
@@ -70,45 +80,19 @@
     { "@type": "City", "name": "Ribeauvillé" },
     { "@type": "City", "name": "Benfeld" },
     { "@type": "City", "name": "Erstein" },
-    { "@type": "City", "name": "Obernai" }
+    { "@type": "City", "name": "Obernai" },
+    { "@type": "City", "name": "Barr" },
+    { "@type": "City", "name": "Sundhouse" },
+    { "@type": "City", "name": "Rhinau" }
   ],
   "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "08:30",
-      "closes": "18:30"
-    }
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "07:00", "closes": "18:00" }
   ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "10",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "10", "bestRating": "5", "worstRating": "1" },
   "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Hervé Christ" },
-      "datePublished": "2026-04-01",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Une entreprise comme il en existe que trop peu. Un service au top, avec le sourire du devis jusqu'aux travaux. Une équipe très sympathique."
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Cindy Pirina" },
-      "datePublished": "2026-02-01",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "J'ai fait appel à PulveryClean Alsace pour le nettoyage de ma terrasse et les murs de ma dépendance. Très satisfaite du résultat, de leur réactivité et de leur professionnalisme. Je recommande fortement."
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Céline Lutz" },
-      "datePublished": "2025-08-01",
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Nous avons fait appel à Thomas et Jérémy pour le nettoyage de notre toiture très noircie par les intempéries. Ils ont protégé terrasse, piscine et jardin. Un travail soigné."
-    }
+    { "@type": "Review", "author": { "@type": "Person", "name": "Hervé Christ" }, "datePublished": "2026-04-01", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "Une entreprise comme il en existe que trop peu. Un service au top, avec le sourire du devis jusqu'aux travaux. Une équipe très sympathique." },
+    { "@type": "Review", "author": { "@type": "Person", "name": "Cindy Pirina" }, "datePublished": "2026-02-01", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "J'ai fait appel à PulveryClean Alsace pour le nettoyage de ma terrasse et les murs de ma dépendance. Très satisfaite du résultat, de leur réactivité et de leur professionnalisme. Je recommande fortement." },
+    { "@type": "Review", "author": { "@type": "Person", "name": "Céline Lutz" }, "datePublished": "2025-08-01", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "reviewBody": "Nous avons fait appel à Thomas et Jérémy pour le nettoyage de notre toiture très noircie par les intempéries. Ils ont protégé terrasse, piscine et jardin. Un travail soigné." }
   ]
 }
 </script>
@@ -121,11 +105,40 @@
   "inLanguage": "fr-FR"
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Combien coûte un nettoyage de toiture ou de façade ?", "acceptedAnswer": { "@type": "Answer", "text": "Nos prestations démarrent à 5 €/m². Le tarif final dépend de la surface, de l'état d'encrassement et du traitement choisi. Nous établissons un devis gratuit, clair et détaillé, sans engagement." } },
+    { "@type": "Question", "name": "Le nettoyage risque-t-il d'abîmer mes tuiles ou mon enduit ?", "acceptedAnswer": { "@type": "Answer", "text": "Non. Nous adaptons la pression et la méthode à chaque support. Contrairement au nettoyage haute pression agressif, notre approche par pulvérisation préserve les tuiles, l'enduit et l'étanchéité de votre couverture." } },
+    { "@type": "Question", "name": "Utilisez-vous de la javel ou du chlore ?", "acceptedAnswer": { "@type": "Answer", "text": "Jamais. Nous travaillons exclusivement sans chlore ni javel. Nos produits préservent vos joints, vos plantations, le mobilier et la nappe phréatique, pour un résultat sain et durable." } },
+    { "@type": "Question", "name": "Combien de temps le résultat dure-t-il ?", "acceptedAnswer": { "@type": "Answer", "text": "Après le nettoyage, nous pouvons appliquer un traitement anti-mousse préventif ou un hydrofuge de protection qui ralentit fortement le retour des mousses et des salissures. Vous espacez ainsi les interventions sur plusieurs années." } },
+    { "@type": "Question", "name": "Sous quel délai intervenez-vous ?", "acceptedAnswer": { "@type": "Answer", "text": "Nous vous transmettons votre devis sous 48 h après votre demande. La date d'intervention est ensuite planifiée rapidement, en tenant compte de la météo pour garantir un résultat optimal." } },
+    { "@type": "Question", "name": "Protégez-vous mes abords pendant le chantier ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, systématiquement. Nous protégeons terrasse, piscine, mobilier et végétaux avant toute intervention, et nous laissons le chantier propre en partant." } },
+    { "@type": "Question", "name": "Quelles communes desservez-vous en Alsace ?", "acceptedAnswer": { "@type": "Answer", "text": "Basés à Bindernheim, nous intervenons dans tout le Bas-Rhin et le Haut-Rhin : Strasbourg, Sélestat, Colmar, Ribeauvillé, Marckolsheim, Benfeld, Erstein, Obernai, Barr et leurs environs. En cas de doute sur votre commune, appelez-nous." } }
+  ]
+}
+</script>
 </head>
 <body>
 
 <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+<div class="scroll-progress" aria-hidden="true"></div>
 
+<!-- TOPBAR -->
+<div class="topbar" role="complementary" aria-label="Informations clés">
+  <div class="container topbar-inner">
+    <span class="topbar-stars" aria-hidden="true">★★★★★</span>
+    <span><strong class="gold">5,0/5</strong> sur Google</span>
+    <span class="topbar-sep hide-sm" aria-hidden="true">·</span>
+    <span class="hide-sm">Devis gratuit sous 48&nbsp;h</span>
+    <span class="topbar-sep" aria-hidden="true">·</span>
+    <span>Sans chlore ni javel</span>
+  </div>
+</div>
+
+<!-- HEADER -->
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a href="/" class="brand" aria-label="PulveryClean Alsace, retour à l'accueil">
@@ -154,90 +167,177 @@
 
 <main id="contenu">
 
-  <!-- HERO -->
+  <!-- ============ HERO ============ -->
   <section class="hero" aria-label="Présentation">
     <div class="hero-media">
-      <img src="images/9.webp" alt="Maison en Alsace avec toiture et façade nettoyées par PulveryClean Alsace" width="1366" height="607" fetchpriority="high">
+      <img src="images/9.webp" alt="Maison alsacienne à la toiture et à la façade nettoyées par PulveryClean Alsace" width="1366" height="607" fetchpriority="high">
     </div>
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <p class="hero-eyebrow">Nettoyage et traitement durable en Alsace</p>
-      <h1 class="hero-title"><span class="line">Redonnez éclat et longévité</span><span class="line">à votre toiture et votre façade</span></h1>
-      <p class="hero-lead">PulveryClean Alsace, basés à Sélestat, nettoient toitures, façades, terrasses et panneaux solaires. Un résultat impeccable, sans chlore ni javel, dans le respect de votre maison et de l'environnement.</p>
+      <p class="hero-eyebrow">Nettoyage &amp; traitement durable · Alsace</p>
+      <h1 class="hero-title">
+        <span class="line">Redonnez à votre maison</span>
+        <span class="line">son éclat d'origine, <em>durablement</em>.</span>
+      </h1>
+      <p class="hero-lead">PulveryClean Alsace nettoie et protège toitures, façades, terrasses et panneaux solaires. Un résultat impeccable, sans chlore ni javel, signé par deux artisans alsaciens notés 5/5 sur Google.</p>
       <div class="hero-cta">
-        <a href="/contact" class="btn btn-primary btn-lg">Demander un devis gratuit</a>
-        <a href="tel:+33645786472" class="btn btn-ghost btn-lg">Appeler le 06 45 78 64 72</a>
+        <a href="/contact" class="btn btn-primary btn-lg" data-magnetic>Obtenir mon devis gratuit</a>
+        <a href="#transformations" class="btn btn-ghost btn-lg">Voir les transformations</a>
       </div>
+      <ul class="hero-assur">
+        <li>Devis sous 48&nbsp;h</li>
+        <li>Sans engagement</li>
+        <li>Abords protégés</li>
+      </ul>
       <ul class="hero-stats">
         <li><strong>5,0/5</strong><span>Note Google sur 10 avis</span></li>
-        <li><strong>100%</strong><span>Clients satisfaits</span></li>
+        <li><strong>100&nbsp;%</strong><span>Clients satisfaits</span></li>
         <li><strong>5&nbsp;€/m²</strong><span>Tarif de départ transparent</span></li>
       </ul>
     </div>
+    <span class="hero-scroll" aria-hidden="true"></span>
   </section>
 
-  <!-- BANDEAU CONFIANCE -->
+  <!-- ============ BANDEAU CONFIANCE ============ -->
   <section class="trust-bar" aria-label="Nos engagements">
     <div class="container trust-grid">
       <div class="trust-item reveal">
-        <span class="trust-icon" aria-hidden="true">🌿</span>
+        <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c6-2 8-7 8-13V4l-4 1c-5 1-8 4-8 9 0 3 1 5 4 7Z"/><path d="M8 21c0-5 3-8 7-10"/></svg></span>
         <p>Sans chlore ni javel</p>
       </div>
-      <div class="trust-item reveal">
-        <span class="trust-icon" aria-hidden="true">★</span>
+      <div class="trust-item reveal d1">
+        <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.7 5.5 6 .9-4.3 4.2 1 6L12 17l-5.4 2.6 1-6L3.3 9.4l6-.9Z"/></svg></span>
         <p>Note 5/5 sur Google</p>
       </div>
-      <div class="trust-item reveal">
-        <span class="trust-icon" aria-hidden="true">✓</span>
-        <p>Devis gratuit et sans engagement</p>
+      <div class="trust-item reveal d2">
+        <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6Z"/><path d="m9 12 2 2 4-4.5"/></svg></span>
+        <p>Devis gratuit, sans engagement</p>
       </div>
-      <div class="trust-item reveal">
-        <span class="trust-icon" aria-hidden="true">📍</span>
+      <div class="trust-item reveal d3">
+        <span class="trust-icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
         <p>Artisans locaux en Alsace</p>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="section services" id="services" aria-labelledby="services-title">
+  <!-- ============ AUTORITÉ / CHIFFRES ============ -->
+  <section class="section authority" id="autorite" aria-labelledby="authority-title">
+    <div class="container split">
+      <div class="split-content reveal">
+        <p class="eyebrow"><span class="idx">01</span> - Pourquoi nous faire confiance</p>
+        <h2 class="section-title" id="authority-title">Une exigence reconnue, chantier après chantier.</h2>
+        <p class="section-sub">Depuis nos débuts, une seule ligne de conduite : un travail soigné, des promesses tenues et des clients qui nous recommandent. Le résultat se mesure autant dans nos avis que sur vos surfaces.</p>
+        <div class="about-sign">
+          <a href="https://www.google.com/search?sa=X&amp;sca_esv=c621deafa4352bcf&amp;hl=fr-FR&amp;q=PulveryClean%20Alsace%20Avis&amp;rldimm=3999566450253373488&amp;tbm=lcl#lkt=LocalPoiReviews" class="google-badge" target="_blank" rel="noopener"><span class="g-stars" aria-hidden="true">★★★★★</span> <strong>5,0</strong> · 10 avis Google vérifiés</a>
+        </div>
+      </div>
+      <div class="split-media reveal d1">
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-num" data-count="5" data-decimals="1" data-suffix="/5">5,0/5</span>
+            <p class="stat-label">Note moyenne sur Google</p>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="100" data-suffix="&nbsp;%">100&nbsp;%</span>
+            <p class="stat-label">Clients satisfaits</p>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="10">10</span>
+            <p class="stat-label">Avis 5&nbsp;étoiles vérifiés</p>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="48" data-suffix="&nbsp;h">48&nbsp;h</span>
+            <p class="stat-label">Devis envoyé sous</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLÈMES ============ -->
+  <section class="section problems" id="problemes" aria-labelledby="problems-title">
     <div class="container">
       <header class="section-head reveal">
-        <p class="eyebrow">Nos prestations</p>
-        <h2 class="section-title" id="services-title">Un nettoyage durable pour chaque surface</h2>
-        <p class="section-sub">De la toiture aux panneaux solaires, nous traitons et protégeons les surfaces de votre maison avec un matériel professionnel et des produits respectueux de l'environnement.</p>
+        <p class="eyebrow"><span class="idx">02</span> - Le constat</p>
+        <h2 class="section-title" id="problems-title">Une maison négligée se dégrade<br>plus vite qu'on ne le croit.</h2>
+        <p class="section-sub">Mousses, algues et pollution ne sont pas qu'une question d'esthétique. Laissés sans traitement, ils abîment durablement vos surfaces, et la rénovation coûte bien plus cher que l'entretien.</p>
+      </header>
+
+      <div class="problem-grid">
+        <article class="problem-card reveal">
+          <span class="problem-ico" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><path d="M9 19v-5h6v5"/></svg></span>
+          <div>
+            <h3>Toiture envahie de mousses</h3>
+            <p>Mousses et lichens retiennent l'humidité, fissurent les tuiles et raccourcissent la vie de votre couverture.</p>
+          </div>
+        </article>
+        <article class="problem-card reveal d1">
+          <span class="problem-ico" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 10h16M4 15h16M10 4v16"/></svg></span>
+          <div>
+            <h3>Façade verdâtre et terne</h3>
+            <p>Traces noires et algues vertes donnent à votre maison un air négligé et font chuter sa valeur perçue.</p>
+          </div>
+        </article>
+        <article class="problem-card reveal d2">
+          <span class="problem-ico" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16h18M3 16l2-9h14l2 9M7 16v3M17 16v3M9.5 7l-1 9M14.5 7l1 9"/></svg></span>
+          <div>
+            <h3>Terrasse glissante et sale</h3>
+            <p>Dalles encrassées, vert d'eau et surfaces glissantes gâchent vos extérieurs dès le retour des beaux jours.</p>
+          </div>
+        </article>
+        <article class="problem-card reveal d3">
+          <span class="problem-ico" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></span>
+          <div>
+            <h3>Solutions agressives qui reviennent</h3>
+            <p>Karcher trop puissant et javel abîment vos surfaces, polluent vos plantations… et la saleté revient vite.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="problems-note reveal">« Bien entretenir une maison coûte beaucoup moins cher que de la rénover, et c'est meilleur pour la planète. » C'est sur cette conviction qu'est née PulveryClean Alsace.</p>
+    </div>
+  </section>
+
+  <!-- ============ SOLUTION / SERVICES ============ -->
+  <section class="section services" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <header class="section-head center reveal">
+        <p class="eyebrow"><span class="idx">03</span> - La réponse PulveryClean</p>
+        <h2 class="section-title" id="services-title">Un nettoyage <span class="accent">doux</span>, un résultat qui dure.</h2>
+        <p class="section-sub">Une méthode par pulvérisation maîtrisée et des produits sans chlore ni javel. On élimine la cause, pas seulement la trace, pour protéger durablement chaque surface de votre maison.</p>
       </header>
 
       <div class="cards-grid">
         <article class="card reveal">
           <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 24 24 8l20 16"/><path d="M9 21v18h30V21"/><path d="M20 39V28h8v11"/></svg>
+            <svg viewBox="0 0 48 48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 24 24 8l20 16"/><path d="M9 21v18h30V21"/><path d="M20 39V28h8v11"/></svg>
           </span>
-          <h3>Nettoyage de toiture</h3>
-          <p>Démoussage, traitement anti-mousse et hydrofuge de protection. On élimine mousses, lichens et noircissures pour prolonger la vie de votre couverture.</p>
+          <h3>Toiture</h3>
+          <p>Démoussage complet, traitement anti-mousse et hydrofuge de protection. Mousses, lichens et noircissures éliminés pour une couverture saine et durable.</p>
           <a href="/services#toiture" class="card-link">En savoir plus</a>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal d1">
           <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="34" height="34"/><path d="M7 18h34M7 30h34M18 7v34M30 7v34"/></svg>
+            <svg viewBox="0 0 48 48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="34" height="34"/><path d="M7 18h34M7 30h34M18 7v34M30 7v34"/></svg>
           </span>
-          <h3>Nettoyage de façade</h3>
-          <p>Suppression des algues vertes, traces noires et pollution. Votre façade retrouve sa couleur d'origine et reste protégée durablement.</p>
+          <h3>Façade</h3>
+          <p>Algues vertes, traces noires et pollution supprimées sans agresser l'enduit. Votre façade retrouve sa teinte d'origine et reste protégée.</p>
           <a href="/services#facade" class="card-link">En savoir plus</a>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal d2">
           <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6c6 6 6 12 0 18-6-6-6-12 0-18Z"/><path d="M24 24v18M10 42h28"/></svg>
+            <svg viewBox="0 0 48 48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6c6 6 6 12 0 18-6-6-6-12 0-18Z"/><path d="M24 24v18M10 42h28"/></svg>
           </span>
-          <h3>Nettoyage de terrasse</h3>
-          <p>Dalles, pavés, bois ou béton. Un nettoyage en profondeur sans chlore ni javel qui redonne vie à vos extérieurs sans abîmer les surfaces.</p>
+          <h3>Terrasse</h3>
+          <p>Dalles, pavés, bois ou béton : un nettoyage en profondeur, sans chlore ni javel, qui redonne vie à vos extérieurs sans abîmer les surfaces.</p>
           <a href="/services#terrasse" class="card-link">En savoir plus</a>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal d3">
           <span class="card-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="10" width="36" height="22"/><path d="M6 21h36M17 10v22M28 10v22M24 32v10M16 42h16"/></svg>
+            <svg viewBox="0 0 48 48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="10" width="36" height="22"/><path d="M6 21h36M17 10v22M28 10v22M24 32v10M16 42h16"/></svg>
           </span>
           <h3>Panneaux solaires</h3>
           <p>Des panneaux propres produisent davantage. Nettoyage doux et sans rayure pour restaurer le rendement de votre installation photovoltaïque.</p>
@@ -245,208 +345,260 @@
         </article>
       </div>
 
-      <div class="section-cta reveal">
-        <a href="/services" class="btn btn-primary">Découvrir tous nos services</a>
+      <div class="section-cta reveal" style="text-align:center;">
+        <a href="/services" class="btn btn-dark btn-lg">Découvrir toutes nos prestations</a>
       </div>
     </div>
   </section>
 
-  <!-- A PROPOS -->
-  <section class="section about-home" id="apropos" aria-labelledby="about-title">
-    <div class="container split">
-      <div class="split-media reveal">
-        <img src="images/5.webp" alt="Thomas Jehl et Jérémy Birger, co-gérants de PulveryClean Alsace" width="724" height="408" loading="lazy">
-      </div>
-      <div class="split-content reveal">
-        <p class="eyebrow">Qui sommes-nous</p>
-        <h2 class="section-title" id="about-title">Deux artisans alsaciens passionnés du travail bien fait</h2>
-        <p>PulveryClean Alsace, c'est Thomas Jehl et Jérémy Birger, deux co-gérants qui ont fait du nettoyage extérieur leur métier. Thomas s'occupe de la relation client et des devis, Jérémy pilote la partie technique sur le terrain.</p>
-        <p>Notre conviction est simple. Une toiture ou une façade entretenue dure plus longtemps et valorise votre bien. Nous utilisons des techniques de pulvérisation maîtrisées et des produits sans chlore ni javel, pour un résultat durable qui respecte vos surfaces, vos plantations et l'environnement.</p>
-        <ul class="check-list">
-          <li>Devis gratuit, clair et détaillé</li>
-          <li>Protection systématique de vos abords</li>
-          <li>Produits respectueux de l'environnement</li>
-        </ul>
-        <a href="/a-propos" class="btn btn-outline">Notre histoire et nos valeurs</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- REALISATIONS -->
-  <section class="section gallery-home" id="realisations" aria-labelledby="gallery-title">
+  <!-- ============ RÉSULTATS / TRANSFORMATIONS ============ -->
+  <section class="section results" id="transformations" aria-labelledby="results-title">
     <div class="container">
-      <header class="section-head reveal">
-        <p class="eyebrow">Nos réalisations</p>
-        <h2 class="section-title" id="gallery-title">Le résultat parle de lui-même</h2>
-        <p class="section-sub">Quelques chantiers réalisés en Alsace. Glissez sur les photos avant et après pour mesurer la différence.</p>
+      <header class="section-head center reveal">
+        <p class="eyebrow"><span class="idx">04</span> - Les transformations</p>
+        <h2 class="section-title" id="results-title">Le résultat parle de lui-même.</h2>
+        <p class="section-sub">Des photos réelles, prises sur nos chantiers en Alsace. La meilleure preuve de notre savoir-faire reste la différence avant / après.</p>
       </header>
 
-      <div class="gallery-grid">
-        <figure class="gallery-item reveal">
-          <img src="images/1.jpg" alt="Avant après nettoyage de façade par PulveryClean Alsace en Alsace" width="800" height="600" loading="lazy">
-          <figcaption>Façade, avant et après</figcaption>
+      <!-- Comparateur interactif avant / après -->
+      <div class="ba reveal">
+        <div class="ba-slider" data-ba>
+          <img class="ba-after" src="images/11.jpg" alt="Toiture en tuiles propre après démoussage par PulveryClean Alsace" width="2046" height="920" loading="lazy">
+          <div class="ba-before-wrap">
+            <img class="ba-before" src="images/10.jpg" alt="Toiture noircie par les mousses avant l'intervention de PulveryClean Alsace" width="2048" height="1152" loading="lazy">
+          </div>
+          <span class="ba-label ba-label-before">Avant</span>
+          <span class="ba-label ba-label-after">Après</span>
+          <span class="ba-handle" aria-hidden="true"></span>
+          <input type="range" class="ba-range" min="0" max="100" value="50" step="0.1" aria-label="Glisser pour comparer l'avant et l'après du nettoyage de toiture">
+        </div>
+        <p class="ba-caption"><span class="ba-hint">Glissez pour comparer</span> Toiture démoussée &amp; traitée, maison individuelle en Alsace</p>
+      </div>
+
+      <!-- Preuves avant / après -->
+      <div class="ba-proofs">
+        <figure class="ba-proof reveal">
+          <img src="images/16.jpeg" alt="Toiture et façade avant après nettoyage par PulveryClean Alsace" width="1152" height="2048" loading="lazy">
+          <figcaption><span class="case-tag">Toiture &amp; façade</span> Tuiles ravivées, façade nettoyée</figcaption>
         </figure>
-        <figure class="gallery-item reveal">
-          <img src="images/2.jpg" alt="Façade ravalée et nettoyée par PulveryClean en Alsace" width="800" height="600" loading="lazy">
-          <figcaption>Façade débarrassée des algues</figcaption>
+        <figure class="ba-proof reveal d1">
+          <img src="images/18.jpeg" alt="Pignon de maison avant après ravalement par nettoyage sans javel" width="1152" height="2048" loading="lazy">
+          <figcaption><span class="case-tag">Façade</span> Pignon ravivé, sans agresser l'enduit</figcaption>
         </figure>
-        <figure class="gallery-item reveal">
-          <img src="images/3.jpg" alt="Nettoyage de façade et toiture avant après à Sélestat" width="800" height="600" loading="lazy">
-          <figcaption>Façade et acrotère</figcaption>
-        </figure>
-        <figure class="gallery-item reveal">
-          <img src="images/4.webp" alt="Nettoyage de bâtiment et bardage industriel en Alsace" width="800" height="600" loading="lazy">
-          <figcaption>Bâtiment professionnel</figcaption>
-        </figure>
-        <figure class="gallery-item reveal">
-          <img src="images/7.webp" alt="Maison avec toiture nettoyée par PulveryClean Alsace" width="800" height="450" loading="lazy">
-          <figcaption>Toiture redevenue nette</figcaption>
-        </figure>
-        <figure class="gallery-item reveal">
-          <img src="images/9.webp" alt="Maison alsacienne après nettoyage de toiture et façade" width="800" height="450" loading="lazy">
-          <figcaption>Maison entièrement traitée</figcaption>
+        <figure class="ba-proof reveal d2">
+          <img src="images/21.jpeg" alt="Muret de terrasse avant après nettoyage des algues sans chlore ni javel" width="1152" height="2048" loading="lazy">
+          <figcaption><span class="case-tag">Terrasse</span> Muret désincrusté, sans chlore ni javel</figcaption>
         </figure>
       </div>
 
-      <div class="section-cta reveal">
-        <a href="/realisations" class="btn btn-primary">Voir toutes les réalisations</a>
+      <div class="section-cta reveal" style="text-align:center;">
+        <a href="/realisations" class="arrow-link">Voir toutes nos réalisations</a>
       </div>
     </div>
   </section>
 
-  <!-- AVIS -->
+  <!-- ============ PROCESSUS ============ -->
+  <section class="section process" id="processus" aria-labelledby="process-title">
+    <div class="container">
+      <header class="section-head center reveal">
+        <p class="eyebrow"><span class="idx">05</span> - Comment ça se passe</p>
+        <h2 class="section-title" id="process-title">Simple, clair, sans mauvaise surprise.</h2>
+        <p class="section-sub">Du premier appel à la fin du chantier, vous savez exactement ce qui est prévu et ce que vous payez.</p>
+      </header>
+
+      <ol class="steps">
+        <li class="step reveal"><span class="step-num">01</span><h3>Premier contact</h3><p>Décrivez-nous votre projet par téléphone ou via le formulaire. Nous cernons rapidement vos besoins.</p></li>
+        <li class="step reveal d1"><span class="step-num">02</span><h3>Visite &amp; devis</h3><p>Nous mesurons les surfaces et vous remettons un devis gratuit et détaillé, à partir de 5&nbsp;€/m², sous 48&nbsp;h.</p></li>
+        <li class="step reveal d2"><span class="step-num">03</span><h3>Intervention soignée</h3><p>Abords protégés, matériel adapté, produits sans chlore ni javel. Un travail propre, du début à la fin.</p></li>
+        <li class="step reveal d3"><span class="step-num">04</span><h3>Résultat durable</h3><p>Vous profitez d'une surface nette et protégée. Un traitement préventif prolonge l'effet dans le temps.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ AVIS ============ -->
   <section class="section reviews" id="avis" aria-labelledby="reviews-title">
     <div class="container">
-      <header class="section-head reveal">
-        <p class="eyebrow">Avis clients</p>
-        <h2 class="section-title" id="reviews-title">Ils nous ont fait confiance</h2>
+      <header class="section-head center reveal">
+        <p class="eyebrow"><span class="idx">06</span> - Avis clients</p>
+        <h2 class="section-title" id="reviews-title">Ils nous ont fait confiance.</h2>
         <div class="reviews-score" aria-label="Note moyenne de 5 sur 5 sur Google">
           <span class="score-stars" aria-hidden="true">★★★★★</span>
           <span class="score-value">5,0 / 5</span>
           <span class="score-meta">sur 10 avis Google</span>
         </div>
       </header>
+    </div>
 
-      <div class="reviews-marquee reveal" aria-label="Avis clients PulveryClean Alsace">
-        <div class="reviews-track">
-          <article class="review-card">
-            <span class="review-card-stars" aria-hidden="true">★★★★★</span>
-            <p class="review-card-text">Une entreprise comme il en existe que trop peu. Un service au top, avec le sourire du devis jusqu'aux travaux. Une équipe très sympathique.</p>
-            <p class="review-card-foot"><span class="review-card-author">Hervé Christ</span><span class="review-card-date">il y a 2 mois</span></p>
-          </article>
-          <article class="review-card">
-            <span class="review-card-stars" aria-hidden="true">★★★★★</span>
-            <p class="review-card-text">J'ai fait appel à PulveryClean pour le nettoyage de ma terrasse et les murs de ma dépendance. Très satisfaite du résultat, de leur réactivité et de leur professionnalisme. Je recommande.</p>
-            <p class="review-card-foot"><span class="review-card-author">Cindy Pirina</span><span class="review-card-date">il y a 4 mois</span></p>
-          </article>
-          <article class="review-card">
-            <span class="review-card-stars" aria-hidden="true">★★★★★</span>
-            <p class="review-card-text">Nous avons fait appel à Thomas et Jérémy pour notre toiture, très noircie par les intempéries. Ils ont protégé terrasse, piscine et jardin. Un travail soigné.</p>
-            <p class="review-card-foot"><span class="review-card-author">Céline Lutz</span><span class="review-card-date">il y a 4 mois</span></p>
-          </article>
-          <article class="review-card">
-            <span class="review-card-stars" aria-hidden="true">★★★★★</span>
-            <p class="review-card-text">Merci à PulveryClean Alsace. Mon restaurant a fait peau neuve. Ils sont intervenus rapidement pour nettoyer la terrasse. Le résultat est propre.</p>
-            <p class="review-card-foot"><span class="review-card-author">Ahcene Adrrar</span><span class="review-card-date">il y a 4 mois</span></p>
-          </article>
-          <article class="review-card">
-            <span class="review-card-stars" aria-hidden="true">★★★★★</span>
-            <p class="review-card-text">Excellent professionnel. Tous les objectifs sont atteints, nettoyage de façade, toiture et murs. Résultat magnifique. Je conseille fortement cette enseigne.</p>
-            <p class="review-card-foot"><span class="review-card-author">Dany Day</span><span class="review-card-date">il y a 4 mois</span></p>
-          </article>
-          <article class="review-card">
-            <span class="review-card-stars" aria-hidden="true">★★★★★</span>
-            <p class="review-card-text">Travail sérieux et soigné, équipe professionnelle et efficace. Résultat conforme aux attentes. Je recommande PulveryClean Alsace.</p>
-            <p class="review-card-foot"><span class="review-card-author">Kevin Waltzer</span><span class="review-card-date">il y a 4 mois</span></p>
-          </article>
-          <article class="review-card">
-            <span class="review-card-stars" aria-hidden="true">★★★★★</span>
-            <p class="review-card-text">Très contente du résultat final sur le traitement de ma façade. Entreprise sérieuse et professionnelle.</p>
-            <p class="review-card-foot"><span class="review-card-author">Angelique Petit</span><span class="review-card-date">il y a 4 mois</span></p>
-          </article>
-          <article class="review-card">
-            <span class="review-card-stars" aria-hidden="true">★★★★★</span>
-            <p class="review-card-text">Un travail de qualité et bien soigné, on apprécie vraiment.</p>
-            <p class="review-card-foot"><span class="review-card-author">Livaï</span><span class="review-card-date">il y a 4 mois</span></p>
-          </article>
-          <article class="review-card">
-            <span class="review-card-stars" aria-hidden="true">★★★★★</span>
-            <p class="review-card-text">Très satisfaite du nettoyage de ma façade. L'équipe est intervenue rapidement, avec beaucoup de sérieux et de professionnalisme.</p>
-            <p class="review-card-foot"><span class="review-card-author">Florence Conrath</span><span class="review-card-date">il y a 2 mois</span></p>
-          </article>
-          <article class="review-card">
-            <span class="review-card-stars" aria-hidden="true">★★★★★</span>
-            <p class="review-card-text">Travail très professionnel, résultat impeccable. Équipe sérieuse et efficace. Je recommande sans hésiter.</p>
-            <p class="review-card-foot"><span class="review-card-author">Océane Schmitt</span><span class="review-card-date">il y a 2 mois</span></p>
-          </article>
+    <div class="reviews-marquee" aria-label="Avis clients PulveryClean Alsace">
+      <div class="reviews-track">
+        <article class="review-card">
+          <span class="review-card-stars" aria-hidden="true">★★★★★</span>
+          <p class="review-card-text">Une entreprise comme il en existe que trop peu. Un service au top, avec le sourire du devis jusqu'aux travaux. Une équipe très sympathique.</p>
+          <p class="review-card-foot"><span class="review-card-author">Hervé Christ</span><span class="review-card-date">il y a 2 mois</span></p>
+        </article>
+        <article class="review-card">
+          <span class="review-card-stars" aria-hidden="true">★★★★★</span>
+          <p class="review-card-text">J'ai fait appel à PulveryClean pour le nettoyage de ma terrasse et les murs de ma dépendance. Très satisfaite du résultat, de leur réactivité et de leur professionnalisme. Je recommande.</p>
+          <p class="review-card-foot"><span class="review-card-author">Cindy Pirina</span><span class="review-card-date">il y a 4 mois</span></p>
+        </article>
+        <article class="review-card">
+          <span class="review-card-stars" aria-hidden="true">★★★★★</span>
+          <p class="review-card-text">Nous avons fait appel à Thomas et Jérémy pour notre toiture, très noircie par les intempéries. Ils ont protégé terrasse, piscine et jardin. Un travail soigné.</p>
+          <p class="review-card-foot"><span class="review-card-author">Céline Lutz</span><span class="review-card-date">il y a 4 mois</span></p>
+        </article>
+        <article class="review-card">
+          <span class="review-card-stars" aria-hidden="true">★★★★★</span>
+          <p class="review-card-text">Merci à PulveryClean Alsace. Mon restaurant a fait peau neuve. Ils sont intervenus rapidement pour nettoyer la terrasse. Le résultat est propre.</p>
+          <p class="review-card-foot"><span class="review-card-author">Ahcene Adrrar</span><span class="review-card-date">il y a 4 mois</span></p>
+        </article>
+        <article class="review-card">
+          <span class="review-card-stars" aria-hidden="true">★★★★★</span>
+          <p class="review-card-text">Excellent professionnel. Tous les objectifs sont atteints, nettoyage de façade, toiture et murs. Résultat magnifique. Je conseille fortement cette enseigne.</p>
+          <p class="review-card-foot"><span class="review-card-author">Dany Day</span><span class="review-card-date">il y a 4 mois</span></p>
+        </article>
+        <article class="review-card">
+          <span class="review-card-stars" aria-hidden="true">★★★★★</span>
+          <p class="review-card-text">Travail sérieux et soigné, équipe professionnelle et efficace. Résultat conforme aux attentes. Je recommande PulveryClean Alsace.</p>
+          <p class="review-card-foot"><span class="review-card-author">Kevin Waltzer</span><span class="review-card-date">il y a 4 mois</span></p>
+        </article>
+        <article class="review-card">
+          <span class="review-card-stars" aria-hidden="true">★★★★★</span>
+          <p class="review-card-text">Très contente du résultat final sur le traitement de ma façade. Entreprise sérieuse et professionnelle.</p>
+          <p class="review-card-foot"><span class="review-card-author">Angelique Petit</span><span class="review-card-date">il y a 4 mois</span></p>
+        </article>
+        <article class="review-card">
+          <span class="review-card-stars" aria-hidden="true">★★★★★</span>
+          <p class="review-card-text">Très satisfaite du nettoyage de ma façade. L'équipe est intervenue rapidement, avec beaucoup de sérieux et de professionnalisme.</p>
+          <p class="review-card-foot"><span class="review-card-author">Florence Conrath</span><span class="review-card-date">il y a 2 mois</span></p>
+        </article>
 
-          <article class="review-card" aria-hidden="true">
-            <span class="review-card-stars">★★★★★</span>
-            <p class="review-card-text">Une entreprise comme il en existe que trop peu. Un service au top, avec le sourire du devis jusqu'aux travaux. Une équipe très sympathique.</p>
-            <p class="review-card-foot"><span class="review-card-author">Hervé Christ</span><span class="review-card-date">il y a 2 mois</span></p>
-          </article>
-          <article class="review-card" aria-hidden="true">
-            <span class="review-card-stars">★★★★★</span>
-            <p class="review-card-text">J'ai fait appel à PulveryClean pour le nettoyage de ma terrasse et les murs de ma dépendance. Très satisfaite du résultat, de leur réactivité et de leur professionnalisme. Je recommande.</p>
-            <p class="review-card-foot"><span class="review-card-author">Cindy Pirina</span><span class="review-card-date">il y a 4 mois</span></p>
-          </article>
-          <article class="review-card" aria-hidden="true">
-            <span class="review-card-stars">★★★★★</span>
-            <p class="review-card-text">Nous avons fait appel à Thomas et Jérémy pour notre toiture, très noircie par les intempéries. Ils ont protégé terrasse, piscine et jardin. Un travail soigné.</p>
-            <p class="review-card-foot"><span class="review-card-author">Céline Lutz</span><span class="review-card-date">il y a 4 mois</span></p>
-          </article>
-          <article class="review-card" aria-hidden="true">
-            <span class="review-card-stars">★★★★★</span>
-            <p class="review-card-text">Merci à PulveryClean Alsace. Mon restaurant a fait peau neuve. Ils sont intervenus rapidement pour nettoyer la terrasse. Le résultat est propre.</p>
-            <p class="review-card-foot"><span class="review-card-author">Ahcene Adrrar</span><span class="review-card-date">il y a 4 mois</span></p>
-          </article>
-          <article class="review-card" aria-hidden="true">
-            <span class="review-card-stars">★★★★★</span>
-            <p class="review-card-text">Excellent professionnel. Tous les objectifs sont atteints, nettoyage de façade, toiture et murs. Résultat magnifique. Je conseille fortement cette enseigne.</p>
-            <p class="review-card-foot"><span class="review-card-author">Dany Day</span><span class="review-card-date">il y a 4 mois</span></p>
-          </article>
-          <article class="review-card" aria-hidden="true">
-            <span class="review-card-stars">★★★★★</span>
-            <p class="review-card-text">Travail sérieux et soigné, équipe professionnelle et efficace. Résultat conforme aux attentes. Je recommande PulveryClean Alsace.</p>
-            <p class="review-card-foot"><span class="review-card-author">Kevin Waltzer</span><span class="review-card-date">il y a 4 mois</span></p>
-          </article>
-          <article class="review-card" aria-hidden="true">
-            <span class="review-card-stars">★★★★★</span>
-            <p class="review-card-text">Très contente du résultat final sur le traitement de ma façade. Entreprise sérieuse et professionnelle.</p>
-            <p class="review-card-foot"><span class="review-card-author">Angelique Petit</span><span class="review-card-date">il y a 4 mois</span></p>
-          </article>
-          <article class="review-card" aria-hidden="true">
-            <span class="review-card-stars">★★★★★</span>
-            <p class="review-card-text">Un travail de qualité et bien soigné, on apprécie vraiment.</p>
-            <p class="review-card-foot"><span class="review-card-author">Livaï</span><span class="review-card-date">il y a 4 mois</span></p>
-          </article>
-          <article class="review-card" aria-hidden="true">
-            <span class="review-card-stars">★★★★★</span>
-            <p class="review-card-text">Très satisfaite du nettoyage de ma façade. L'équipe est intervenue rapidement, avec beaucoup de sérieux et de professionnalisme.</p>
-            <p class="review-card-foot"><span class="review-card-author">Florence Conrath</span><span class="review-card-date">il y a 2 mois</span></p>
-          </article>
-          <article class="review-card" aria-hidden="true">
-            <span class="review-card-stars">★★★★★</span>
-            <p class="review-card-text">Travail très professionnel, résultat impeccable. Équipe sérieuse et efficace. Je recommande sans hésiter.</p>
-            <p class="review-card-foot"><span class="review-card-author">Océane Schmitt</span><span class="review-card-date">il y a 2 mois</span></p>
-          </article>
-        </div>
+        <article class="review-card" aria-hidden="true">
+          <span class="review-card-stars">★★★★★</span>
+          <p class="review-card-text">Une entreprise comme il en existe que trop peu. Un service au top, avec le sourire du devis jusqu'aux travaux. Une équipe très sympathique.</p>
+          <p class="review-card-foot"><span class="review-card-author">Hervé Christ</span><span class="review-card-date">il y a 2 mois</span></p>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <span class="review-card-stars">★★★★★</span>
+          <p class="review-card-text">J'ai fait appel à PulveryClean pour le nettoyage de ma terrasse et les murs de ma dépendance. Très satisfaite du résultat, de leur réactivité et de leur professionnalisme. Je recommande.</p>
+          <p class="review-card-foot"><span class="review-card-author">Cindy Pirina</span><span class="review-card-date">il y a 4 mois</span></p>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <span class="review-card-stars">★★★★★</span>
+          <p class="review-card-text">Nous avons fait appel à Thomas et Jérémy pour notre toiture, très noircie par les intempéries. Ils ont protégé terrasse, piscine et jardin. Un travail soigné.</p>
+          <p class="review-card-foot"><span class="review-card-author">Céline Lutz</span><span class="review-card-date">il y a 4 mois</span></p>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <span class="review-card-stars">★★★★★</span>
+          <p class="review-card-text">Merci à PulveryClean Alsace. Mon restaurant a fait peau neuve. Ils sont intervenus rapidement pour nettoyer la terrasse. Le résultat est propre.</p>
+          <p class="review-card-foot"><span class="review-card-author">Ahcene Adrrar</span><span class="review-card-date">il y a 4 mois</span></p>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <span class="review-card-stars">★★★★★</span>
+          <p class="review-card-text">Excellent professionnel. Tous les objectifs sont atteints, nettoyage de façade, toiture et murs. Résultat magnifique. Je conseille fortement cette enseigne.</p>
+          <p class="review-card-foot"><span class="review-card-author">Dany Day</span><span class="review-card-date">il y a 4 mois</span></p>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <span class="review-card-stars">★★★★★</span>
+          <p class="review-card-text">Travail sérieux et soigné, équipe professionnelle et efficace. Résultat conforme aux attentes. Je recommande PulveryClean Alsace.</p>
+          <p class="review-card-foot"><span class="review-card-author">Kevin Waltzer</span><span class="review-card-date">il y a 4 mois</span></p>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <span class="review-card-stars">★★★★★</span>
+          <p class="review-card-text">Très contente du résultat final sur le traitement de ma façade. Entreprise sérieuse et professionnelle.</p>
+          <p class="review-card-foot"><span class="review-card-author">Angelique Petit</span><span class="review-card-date">il y a 4 mois</span></p>
+        </article>
+        <article class="review-card" aria-hidden="true">
+          <span class="review-card-stars">★★★★★</span>
+          <p class="review-card-text">Très satisfaite du nettoyage de ma façade. L'équipe est intervenue rapidement, avec beaucoup de sérieux et de professionnalisme.</p>
+          <p class="review-card-foot"><span class="review-card-author">Florence Conrath</span><span class="review-card-date">il y a 2 mois</span></p>
+        </article>
       </div>
+    </div>
 
-      <div class="section-cta reveal">
+    <div class="container">
+      <div class="section-cta reveal" style="text-align:center;">
         <a href="https://www.google.com/search?sa=X&amp;sca_esv=c621deafa4352bcf&amp;hl=fr-FR&amp;q=PulveryClean%20Alsace%20Avis&amp;rldimm=3999566450253373488&amp;tbm=lcl#lkt=LocalPoiReviews" class="btn btn-outline" target="_blank" rel="noopener">Voir plus d'avis Google</a>
       </div>
     </div>
   </section>
 
-  <!-- ZONE D'INTERVENTION -->
+  <!-- ============ ARTISANS / À PROPOS ============ -->
+  <section class="section about-home" id="apropos" aria-labelledby="about-title">
+    <div class="container split">
+      <div class="split-media reveal">
+        <div class="media-frame">
+          <img src="images/5.webp" alt="Thomas Jehl et Jérémy Birger, co-gérants de PulveryClean Alsace" width="724" height="408" loading="lazy">
+          <div class="media-badge">
+            <span class="mb-num">2</span>
+            <span class="mb-txt">artisans alsaciens,<br>un seul standard d'exigence</span>
+          </div>
+        </div>
+      </div>
+      <div class="split-content reveal d1">
+        <p class="eyebrow"><span class="idx">07</span> - Qui sommes-nous</p>
+        <h2 class="section-title" id="about-title">Deux artisans passionnés du travail bien fait.</h2>
+        <p>PulveryClean Alsace, c'est Thomas Jehl et Jérémy Birger. Thomas vous accompagne sur la relation client et les devis ; Jérémy pilote la partie technique sur le terrain. Une équipe à taille humaine, qui s'engage personnellement sur chaque chantier.</p>
+        <ul class="check-list">
+          <li>Devis gratuit, clair et détaillé</li>
+          <li>Protection systématique de vos abords</li>
+          <li>Produits respectueux de l'environnement</li>
+        </ul>
+        <a href="/a-propos" class="btn btn-outline">Notre histoire &amp; nos valeurs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq" id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <header class="section-head center reveal">
+        <p class="eyebrow"><span class="idx">08</span> - Vos questions</p>
+        <h2 class="section-title" id="faq-title">Tout ce que vous voulez savoir.</h2>
+        <p class="section-sub">Prix, méthode, garanties, délais : les réponses aux questions que se posent la plupart de nos clients avant de nous confier leur projet.</p>
+      </header>
+
+      <div class="faq-wrap reveal">
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Combien coûte un nettoyage de toiture ou de façade ?<span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Nos prestations démarrent à <strong>5 €/m²</strong>. Le tarif final dépend de la surface, de l'état d'encrassement et du traitement choisi. Nous établissons toujours un devis gratuit, clair et détaillé, sans engagement.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Le nettoyage risque-t-il d'abîmer mes tuiles ou mon enduit ?<span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Non. Nous adaptons la pression et la méthode à chaque support. Contrairement au nettoyage haute pression agressif, notre approche par pulvérisation préserve les tuiles, l'enduit et l'étanchéité de votre couverture.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Utilisez-vous de la javel ou du chlore ?<span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Jamais. Nous travaillons <strong>exclusivement sans chlore ni javel</strong>. Nos produits préservent vos joints, vos plantations, le mobilier et la nappe phréatique, pour un résultat sain et durable.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Combien de temps le résultat dure-t-il ?<span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Après le nettoyage, nous pouvons appliquer un traitement anti-mousse préventif ou un hydrofuge de protection qui ralentit fortement le retour des mousses et des salissures. Vous espacez ainsi les interventions sur plusieurs années.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Sous quel délai intervenez-vous ?<span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Nous vous transmettons votre devis <strong>sous 48 h</strong> après votre demande. La date d'intervention est ensuite planifiée rapidement, en tenant compte de la météo pour garantir un résultat optimal.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Protégez-vous mes abords pendant le chantier ?<span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Oui, systématiquement. Nous protégeons terrasse, piscine, mobilier et végétaux avant toute intervention, et nous laissons le chantier propre en partant.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Quelles communes desservez-vous en Alsace ?<span class="faq-icon" aria-hidden="true"></span></button>
+          <div class="faq-a"><div class="faq-a-inner"><p>Basés à Bindernheim, nous intervenons dans tout le Bas-Rhin et le Haut-Rhin : Strasbourg, Sélestat, Colmar, Ribeauvillé, Marckolsheim, Benfeld, Erstein, Obernai, Barr et leurs environs. En cas de doute sur votre commune, appelez-nous.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ZONE ============ -->
   <section class="section zone" id="zone" aria-labelledby="zone-title">
     <div class="container split">
       <div class="split-content reveal">
-        <p class="eyebrow">Zone d'intervention</p>
-        <h2 class="section-title" id="zone-title">Présents partout en Alsace centrale</h2>
-        <p>Basés à Sélestat, nous intervenons dans le Bas-Rhin et le Haut-Rhin, autour de Sélestat, Colmar et leurs environs. Un doute sur votre commune ? Appelez-nous, nous nous déplaçons largement dans la région.</p>
+        <p class="eyebrow"><span class="idx">09</span> - Zone d'intervention</p>
+        <h2 class="section-title" id="zone-title">Présents partout en Alsace centrale.</h2>
+        <p class="section-sub">Basés à Bindernheim, nous intervenons dans le Bas-Rhin et le Haut-Rhin, de Strasbourg à Colmar en passant par Sélestat. Un doute sur votre commune ? Appelez-nous, nous nous déplaçons largement dans la région.</p>
         <ul class="zone-list">
+          <li>Strasbourg</li>
           <li>Sélestat</li>
           <li>Colmar</li>
           <li>Bindernheim</li>
@@ -459,34 +611,45 @@
           <li>Obernai</li>
           <li>Barr</li>
           <li>Muttersholtz</li>
+          <li>Sundhouse</li>
+          <li>Hilsenheim</li>
+          <li>Ebersheim</li>
+          <li>Wittisheim</li>
+          <li>Kogenheim</li>
+          <li>Sermersheim</li>
+          <li>Rhinau</li>
+          <li>Sand</li>
+          <li>Gerstheim</li>
+          <li>Molsheim</li>
+          <li>Rosheim</li>
         </ul>
       </div>
-      <div class="split-media reveal">
+      <div class="split-media reveal d1">
         <iframe
           class="map-frame"
-          title="Carte de la zone d'intervention de PulveryClean Alsace à Sélestat"
-          src="https://www.google.com/maps?q=8+Route+de+Colmar+67600+S%C3%A9lestat&output=embed"
+          title="Carte de la zone d'intervention de PulveryClean Alsace à Bindernheim"
+          src="https://www.google.com/maps?q=14+Rue+de+l%27%C3%89tang+67600+Bindernheim&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ============ CONTACT ============ -->
   <section class="section contact-home" id="contact" aria-labelledby="contact-title">
     <div class="container split">
       <div class="split-content reveal">
-        <p class="eyebrow">Contact</p>
-        <h2 class="section-title" id="contact-title">Demandez votre devis gratuit</h2>
-        <p>Décrivez-nous votre projet en quelques mots. Nous vous rappelons rapidement pour évaluer la surface et vous proposer un tarif clair, sans engagement.</p>
+        <p class="eyebrow"><span class="idx">10</span> - Contact</p>
+        <h2 class="section-title" id="contact-title">Demandez votre devis gratuit.</h2>
+        <p class="section-sub">Décrivez-nous votre projet en quelques mots. Nous vous rappelons rapidement pour évaluer la surface et vous proposer un tarif clair, sans engagement.</p>
         <ul class="contact-coords">
           <li><span class="coord-label">Téléphone</span><a href="tel:+33645786472">06 45 78 64 72</a></li>
           <li><span class="coord-label">Email</span><a href="mailto:thomas.jehl@pulveryclean.fr">thomas.jehl@pulveryclean.fr</a></li>
-          <li><span class="coord-label">Adresse</span>8 Rte de Colmar, 67600 Sélestat</li>
-          <li><span class="coord-label">Horaires</span>Mardi au samedi, dès 08h30</li>
+          <li><span class="coord-label">Adresse</span>14 Rue de l'Étang, 67600 Bindernheim</li>
+          <li><span class="coord-label">Horaires</span>Lundi au samedi, 7h - 18h</li>
         </ul>
       </div>
-      <div class="split-content reveal">
+      <div class="split-content reveal d1">
         <form class="contact-form" action="https://formsubmit.co/thomas.jehl@pulveryclean.fr" method="POST">
           <input type="hidden" name="_subject" value="Nouvelle demande de devis depuis le site PulveryClean Alsace">
           <input type="hidden" name="_template" value="table">
@@ -508,22 +671,23 @@
           </div>
           <div class="field">
             <label for="h-message">Votre projet</label>
-            <textarea id="h-message" name="message" rows="4" required placeholder="Toiture, façade, terrasse, surface approximative..."></textarea>
+            <textarea id="h-message" name="message" rows="4" required placeholder="Toiture, façade, terrasse, surface approximative, ville..."></textarea>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Envoyer ma demande</button>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">Envoyer ma demande</button>
           <p class="form-note">Vos données servent uniquement à vous recontacter. Voir nos <a href="/mentions-legales">mentions légales</a>.</p>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
+  <!-- ============ CTA FINAL ============ -->
   <section class="cta-band" aria-label="Demander un devis">
     <div class="container cta-band-inner reveal">
+      <p class="eyebrow" style="justify-content:center;color:var(--gold-2);">Prêt à commencer</p>
       <h2>Prêt à redonner de l'éclat à votre maison ?</h2>
-      <p>Devis gratuit sous 48 h. Sans chlore ni javel, pour un résultat durable.</p>
+      <p>Devis gratuit sous 48 h. Sans chlore ni javel, pour un résultat durable que vos voisins remarqueront.</p>
       <div class="cta-band-actions">
-        <a href="/contact" class="btn btn-light btn-lg">Demander mon devis</a>
+        <a href="/contact" class="btn btn-light btn-lg" data-magnetic>Demander mon devis</a>
         <a href="tel:+33645786472" class="btn btn-ghost-light btn-lg">06 45 78 64 72</a>
       </div>
     </div>
@@ -560,12 +724,12 @@
     <div class="footer-col footer-contact">
       <h2 class="footer-title">Coordonnées</h2>
       <address>
-        8 Rte de Colmar<br>
-        67600 Sélestat<br>
+        14 Rue de l'Étang<br>
+        67600 Bindernheim<br>
         <a href="tel:+33645786472">06 45 78 64 72</a><br>
         <a href="mailto:thomas.jehl@pulveryclean.fr">thomas.jehl@pulveryclean.fr</a>
       </address>
-      <p class="footer-hours">Mardi au samedi, dès 08h30</p>
+      <p class="footer-hours">Lundi au samedi, 7h - 18h</p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -577,7 +741,7 @@
 </footer>
 
 <a href="tel:+33645786472" class="mobile-call" aria-label="Appeler PulveryClean Alsace au 06 45 78 64 72">
-  <span class="mobile-call-icon" aria-hidden="true">📞</span> Appeler maintenant
+  <span class="mobile-call-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg></span> Appeler maintenant
 </a>
 
 <script src="js/script.js" defer></script>

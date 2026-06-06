@@ -3,13 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.classList.add('js');</script>
+<script>
+document.documentElement.classList.add('js');
+/* Filet de sécurité : si script.js ne se charge pas, on révèle quand même
+   tout le contenu après le chargement pour éviter des sections vides. */
+window.addEventListener('load', function () {
+  setTimeout(function () {
+    if (!window.__pcReady) {
+      var els = document.querySelectorAll('.reveal');
+      for (var i = 0; i < els.length; i++) { els[i].classList.add('is-visible'); }
+    }
+  }, 1800);
+});
+</script>
 
 <title>À propos, Thomas Jehl et Jérémy Birger | PulveryClean Alsace</title>
 <meta name="description" content="PulveryClean Alsace, c'est Thomas Jehl et Jérémy Birger, deux co-gérants du nettoyage durable en Alsace. Découvrez notre histoire, nos valeurs et notre méthode sans javel.">
 <link rel="canonical" href="https://pulveryclean-alsace.fr/a-propos">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#16130d">
 <link rel="alternate" hreflang="fr" href="https://pulveryclean-alsace.fr/a-propos">
 
 <meta property="og:type" content="website">
@@ -27,7 +39,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style-mobile.css">
 <link rel="stylesheet" href="css/style-desktop.css" media="(min-width: 1024px)">
@@ -135,7 +147,7 @@
         <article class="card reveal">
           <span class="card-icon" aria-hidden="true">📍</span>
           <h3>Proximité</h3>
-          <p>Artisans locaux basés à Sélestat, nous connaissons l'Alsace, son climat et ses bâtisses.</p>
+          <p>Artisans locaux basés à Bindernheim, nous connaissons l'Alsace, son climat et ses bâtisses.</p>
         </article>
       </div>
     </div>
@@ -201,12 +213,12 @@
     <div class="footer-col footer-contact">
       <h2 class="footer-title">Coordonnées</h2>
       <address>
-        8 Rte de Colmar<br>
-        67600 Sélestat<br>
+        14 Rue de l'Étang<br>
+        67600 Bindernheim<br>
         <a href="tel:+33645786472">06 45 78 64 72</a><br>
         <a href="mailto:thomas.jehl@pulveryclean.fr">thomas.jehl@pulveryclean.fr</a>
       </address>
-      <p class="footer-hours">Mardi au samedi, dès 08h30</p>
+      <p class="footer-hours">Lundi au samedi, 7h - 18h</p>
     </div>
   </div>
   <div class="footer-bottom">

@@ -3,13 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.classList.add('js');</script>
+<script>
+document.documentElement.classList.add('js');
+/* Filet de sécurité : si script.js ne se charge pas, on révèle quand même
+   tout le contenu après le chargement pour éviter des sections vides. */
+window.addEventListener('load', function () {
+  setTimeout(function () {
+    if (!window.__pcReady) {
+      var els = document.querySelectorAll('.reveal');
+      for (var i = 0; i < els.length; i++) { els[i].classList.add('is-visible'); }
+    }
+  }, 1800);
+});
+</script>
 
 <title>Réalisations avant après en Alsace | PulveryClean Alsace</title>
 <meta name="description" content="Galerie de chantiers PulveryClean Alsace, photos avant après réelles de nettoyage de façade, toiture et bâtiment en Alsace. Demandez votre devis gratuit.">
 <link rel="canonical" href="https://pulveryclean-alsace.fr/realisations">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#16130d">
 <link rel="alternate" hreflang="fr" href="https://pulveryclean-alsace.fr/realisations">
 
 <meta property="og:type" content="website">
@@ -27,7 +39,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style-mobile.css">
 <link rel="stylesheet" href="css/style-desktop.css" media="(min-width: 1024px)">
@@ -90,23 +102,56 @@
 
       <div class="filters" role="tablist" aria-label="Filtrer les réalisations">
         <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">Tout</button>
-        <button type="button" class="filter" data-filter="facade" aria-pressed="false">Façade</button>
         <button type="button" class="filter" data-filter="toiture" aria-pressed="false">Toiture</button>
+        <button type="button" class="filter" data-filter="facade" aria-pressed="false">Façade</button>
+        <button type="button" class="filter" data-filter="terrasse" aria-pressed="false">Terrasse</button>
         <button type="button" class="filter" data-filter="batiment" aria-pressed="false">Bâtiment</button>
       </div>
 
       <div class="gallery-grid" id="galleryGrid">
-        <figure class="gallery-item reveal" data-cat="facade">
-          <img src="images/1.jpg" alt="Avant après nettoyage de façade avec algues vertes, PulveryClean Alsace" width="800" height="600" loading="lazy">
-          <figcaption><span class="tag">Façade</span>Façade ravalée, algues supprimées</figcaption>
+        <figure class="gallery-item reveal" data-cat="toiture">
+          <img src="images/16.jpeg" alt="Avant après nettoyage de toiture et façade par PulveryClean Alsace en Alsace" width="1152" height="2048" loading="lazy">
+          <figcaption><span class="tag">Toiture</span>Toiture &amp; façade, avant / après</figcaption>
         </figure>
         <figure class="gallery-item reveal" data-cat="facade">
-          <img src="images/2.jpg" alt="Façade nettoyée avant après par PulveryClean Alsace en Alsace" width="800" height="600" loading="lazy">
-          <figcaption><span class="tag">Façade</span>Pignon de maison nettoyé</figcaption>
+          <img src="images/18.jpeg" alt="Avant après ravalement de pignon, façade crème nettoyée sans javel" width="1152" height="2048" loading="lazy">
+          <figcaption><span class="tag">Façade</span>Pignon ravalé, sans javel</figcaption>
+        </figure>
+        <figure class="gallery-item reveal" data-cat="terrasse">
+          <img src="images/21.jpeg" alt="Avant après nettoyage d'un muret de terrasse couvert d'algues, sans chlore" width="1152" height="2048" loading="lazy">
+          <figcaption><span class="tag">Terrasse</span>Muret désincrusté, sans chlore</figcaption>
+        </figure>
+        <figure class="gallery-item reveal" data-cat="toiture">
+          <img src="images/14.jpeg" alt="Avant après démoussage de toiture et lucarne par PulveryClean Alsace" width="1152" height="2048" loading="lazy">
+          <figcaption><span class="tag">Toiture</span>Démoussage toiture &amp; lucarne</figcaption>
         </figure>
         <figure class="gallery-item reveal" data-cat="facade">
-          <img src="images/3.jpg" alt="Nettoyage de façade et acrotère avant après à Sélestat" width="800" height="600" loading="lazy">
-          <figcaption><span class="tag">Façade</span>Façade et bordure de toit</figcaption>
+          <img src="images/17.jpeg" alt="Avant après nettoyage de pignon, façade assainie sans agresser l'enduit" width="1152" height="2048" loading="lazy">
+          <figcaption><span class="tag">Façade</span>Pignon nettoyé, enduit préservé</figcaption>
+        </figure>
+        <figure class="gallery-item reveal" data-cat="toiture">
+          <img src="images/11.jpg" alt="Toiture en tuiles ravivée après démoussage en Alsace" width="2046" height="920" loading="lazy">
+          <figcaption><span class="tag">Toiture</span>Toiture en tuiles ravivée</figcaption>
+        </figure>
+        <figure class="gallery-item reveal" data-cat="facade">
+          <img src="images/19.jpeg" alt="Avant après façade débarrassée des algues vertes par PulveryClean Alsace" width="1152" height="2048" loading="lazy">
+          <figcaption><span class="tag">Façade</span>Algues vertes éliminées</figcaption>
+        </figure>
+        <figure class="gallery-item reveal" data-cat="toiture">
+          <img src="images/20.jpeg" alt="Avant après démoussage de toiture en profondeur en Alsace" width="1152" height="2048" loading="lazy">
+          <figcaption><span class="tag">Toiture</span>Démoussage en profondeur</figcaption>
+        </figure>
+        <figure class="gallery-item reveal" data-cat="facade">
+          <img src="images/15.jpeg" alt="Avant après nettoyage de soubassement, vert d'eau éliminé sans javel" width="1152" height="2048" loading="lazy">
+          <figcaption><span class="tag">Façade</span>Soubassement assaini</figcaption>
+        </figure>
+        <figure class="gallery-item reveal" data-cat="facade">
+          <img src="images/13.jpg" alt="Pignon de maison ravivé après nettoyage par PulveryClean Alsace" width="1152" height="2048" loading="lazy">
+          <figcaption><span class="tag">Façade</span>Pignon ravivé</figcaption>
+        </figure>
+        <figure class="gallery-item reveal" data-cat="toiture">
+          <img src="images/9.webp" alt="Maison alsacienne avec toiture en tuiles nettoyée et façade propre" width="1366" height="607" loading="lazy">
+          <figcaption><span class="tag">Toiture</span>Maison entièrement traitée</figcaption>
         </figure>
         <figure class="gallery-item reveal" data-cat="batiment">
           <img src="images/4.webp" alt="Nettoyage de bardage et bâtiment professionnel avant après en Alsace" width="800" height="600" loading="lazy">
@@ -115,10 +160,6 @@
         <figure class="gallery-item reveal" data-cat="toiture">
           <img src="images/7.webp" alt="Toiture de maison nettoyée par PulveryClean Alsace" width="800" height="450" loading="lazy">
           <figcaption><span class="tag">Toiture</span>Toiture redevenue nette</figcaption>
-        </figure>
-        <figure class="gallery-item reveal" data-cat="toiture">
-          <img src="images/9.webp" alt="Maison alsacienne avec toiture en tuiles nettoyée et façade propre" width="800" height="450" loading="lazy">
-          <figcaption><span class="tag">Toiture</span>Toiture en tuiles ravivée</figcaption>
         </figure>
       </div>
 
@@ -168,12 +209,12 @@
     <div class="footer-col footer-contact">
       <h2 class="footer-title">Coordonnées</h2>
       <address>
-        8 Rte de Colmar<br>
-        67600 Sélestat<br>
+        14 Rue de l'Étang<br>
+        67600 Bindernheim<br>
         <a href="tel:+33645786472">06 45 78 64 72</a><br>
         <a href="mailto:thomas.jehl@pulveryclean.fr">thomas.jehl@pulveryclean.fr</a>
       </address>
-      <p class="footer-hours">Mardi au samedi, dès 08h30</p>
+      <p class="footer-hours">Lundi au samedi, 7h - 18h</p>
     </div>
   </div>
   <div class="footer-bottom">
