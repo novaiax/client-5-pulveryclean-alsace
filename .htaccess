@@ -33,8 +33,9 @@ DirectoryIndex index.html
   RewriteRule ^(.+?)/?$ $1.html [L]
 </IfModule>
 
-# Page d'erreur 404 (renvoie vers l'accueil si non geree autrement)
-ErrorDocument 404 /index.html
+# Page d'erreur 404 dediee (renvoie un vrai statut 404 + page noindex,
+# evite le "soft 404" que Google penalise a l'indexation)
+ErrorDocument 404 /404.html
 
 # Compression GZIP
 <IfModule mod_deflate.c>
