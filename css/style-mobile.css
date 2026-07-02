@@ -255,6 +255,23 @@ strong { font-weight: 600; }
 .topbar-sep { opacity: 0.3; }
 .topbar .hide-sm { display: none; }
 
+/* ---- Mention de conformite franchise (sous le header) ---- */
+.franchise-bar {
+  background: var(--ink-deep);
+  border-bottom: 1px solid var(--line-gold);
+  color: var(--on-dark);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+.franchise-bar-inner {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; min-height: 36px; padding: 7px 0; text-align: center; flex-wrap: wrap;
+}
+.franchise-bar svg { width: 15px; height: 15px; color: var(--gold-2); flex-shrink: 0; }
+.franchise-bar strong { color: #fff; font-weight: 600; }
+.franchise-bar a { color: var(--gold-2); font-weight: 600; white-space: nowrap; }
+.franchise-bar a:hover { text-decoration: underline; }
+
 /* ============================================================
    HEADER
    ============================================================ */
@@ -799,6 +816,8 @@ strong { font-weight: 600; }
 .footer-bottom a { color: rgba(255, 255, 255, 0.72); }
 .footer-bottom a:hover { color: var(--gold-2); }
 .footer-credit a { color: var(--gold-2); font-weight: 600; }
+.footer-franchise { margin: 0 0 14px; padding-bottom: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 0.8rem; line-height: 1.6; color: var(--on-dark-soft); text-align: center; }
+.footer-franchise a { color: var(--gold-2); font-weight: 600; }
 
 /* ============================================================
    BOUTON APPEL MOBILE
