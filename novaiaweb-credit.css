@@ -1,0 +1,59 @@
+/* Credit strip at the end of the footer. */
+.novaiaweb-credit {
+  box-sizing: border-box;
+  width: min(72rem, calc(100% - 2rem));
+  margin: 1.25rem auto 0;
+  padding-bottom: 1rem;
+}
+footer .novaiaweb-credit > a {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .7rem 1.25rem;
+  flex-wrap: wrap;
+  padding: .7rem 1rem;
+  background: #f4d8c9;
+  border: 1px solid #c07d65;
+  border-radius: .55rem;
+  color: #0b1b46;
+  font-size: .9rem;
+  line-height: 1.5;
+  text-decoration: none;
+}
+footer .novaiaweb-credit strong {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  min-height: 44px;
+  padding: .4rem .75rem;
+  border-radius: .35rem;
+  background: #0b1b46;
+  color: #fff;
+  font-size: .9rem;
+  line-height: 1.3;
+  font-weight: 750;
+}
+footer .novaiaweb-credit > a:hover,
+footer .novaiaweb-credit > a:focus-visible {
+  background: #f8e7dc;
+  color: #0b1b46;
+  text-decoration: none;
+}
+footer .novaiaweb-credit > a:focus-visible {
+  outline: 3px solid #ad4b32;
+  outline-offset: 3px;
+}
+footer .novaiaweb-credit > a:hover strong {
+  background: #8b3828;
+}
+@media (max-width: 760px) {
+  body:has(.mobile-call, .mobile-call-btn, .sticky-call, .mobile-cta, .mobile-sticky-session) .novaiaweb-credit {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+@media (forced-colors: active) {
+  footer .novaiaweb-credit strong {
+    border: 1px solid ButtonText;
+  }
+}
